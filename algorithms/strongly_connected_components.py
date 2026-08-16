@@ -15,14 +15,6 @@ def _load_data(file_path: str) -> tuple[dict[int, list[int]], dict[int, list[int
     return graph, graph_rev
 
 
-def _get_max_node_label(edges: list[list[int, int]]):
-    return max([max(edge) for edge in edges])
-
-
-def _revert_edges(edges: list[list[int, int]]) -> list[list[int, int]]:
-    return [e[::-1] for e in edges]
-
-
 def _dfs_pass_1(edges: dict[int, list[int]], vertex: int, t: int, finishing_times: dict, explored_nodes: set) -> int:
     stack = [(vertex, "enter")]
     while stack:
